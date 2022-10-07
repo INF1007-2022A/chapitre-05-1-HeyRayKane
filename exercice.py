@@ -47,7 +47,31 @@ def use_continue() -> None:
     return print(a)
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+    n=0
+    for i in groups:
+        if len(groups[n]) > 10 or len(groups[n]) <=3:
+            for a in i:
+                if a==25:
+                    groups[n]=True
+                    break
+                elif a>70:
+                    for o in i:
+                        if o == 50:
+                            groups[n] = False
+                            break
+                        elif o == i[len(i)-1]:
+                            groups[n] = True
+                elif a<18:
+                    groups[n]=False
+                    break
+                elif a>=18 and a<=70:
+                    continue
+                else:
+                    groups[n]=True
+        else:
+            groups[n] = False
+        n+=1
+    return groups
 
 
 def main() -> None:
