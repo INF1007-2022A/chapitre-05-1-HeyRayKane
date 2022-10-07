@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+    #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 
@@ -6,26 +6,45 @@ from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
-
+    if number < 0:
+        number *= -1
+    return number
 
 def use_prefixes() -> List[str]:
-    prefixes, suffixe = 'JKLMNOPQ', 'ack'
-
-    return [""]
-
+    prefixes, suffixe, a = 'JKLMNOPQ', 'ack', " "
+    for i in prefixes:
+        a += f"{i}{suffixe} "
+    return a
 
 def prime_integer_summation() -> int:
-    return 0
-
+    x=2
+    i=0
+    S=0
+    while i<100:
+        for a in range(2,x+1):
+            if x == a:
+                i+=1
+                S+=x
+            elif x%a == 0:
+                break
+        x += 1
+    return S
 
 def factorial(number: int) -> int:
-    return 0
-
+    i=1
+    F=1
+    while i<number:
+        i+=1
+        F*=i
+    return F
 
 def use_continue() -> None:
-    pass
-
+    a=""
+    for i in range(1,11):
+        if i == 5:
+            continue
+        a+= f"{i} "
+    return print(a)
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
     return []
